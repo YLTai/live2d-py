@@ -60,3 +60,5 @@ package/test*.py
 /examples/live2d/
 
 .DS_Store
+
+Live2D/Core
