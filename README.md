@@ -24,6 +24,8 @@
     <a href="https://github.com/Arkueid/live2d-py/blob/main/README.en.md">English README</a>
 </p>
 
+**注意：本项目中使用到的Live2D Core模块，需要自行前往[Live2D官网](https://www.live2d.com/en/sdk/download/native/)下载。同时，将暂时停止python build库的发布。**
+
 使用 Python 直接加载和操作 Live2D 模型，不通过 Web Engine 等间接手段进行渲染。
 
 基于 Python C Extension 对 Live2D Native SDK (C++) 进行了封装。理论上，只要配置好 OpenGL 上下文，可在 Python 中将 live2d 绘制在任何基于 OpenGL 的窗口。

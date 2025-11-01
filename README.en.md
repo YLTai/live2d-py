@@ -22,6 +22,8 @@
 
 [中文](./README.md)
 
+**Notes: The Live2D Core module used in this project needs to be downloaded from the Live2D official website. Meanwhile, the release of the Python build library will be temporarily suspended.**
+
 Load and manipulate Live2D models using pure Python instead of web engine (JavaScript). 
 
 The functionalities of Live2D Native SDK are wrapped into Python via Python C Extension. 
