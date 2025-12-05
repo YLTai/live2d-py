@@ -11,6 +11,8 @@ jobs:
   build-n-publish:
     name: Build📦 for MacOS
     runs-on: macos-13
+    permissions:
+      contents: write
 
     strategy:
       matrix:
