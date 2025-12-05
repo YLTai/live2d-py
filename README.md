@@ -24,7 +24,7 @@
     <a href="https://github.com/Arkueid/live2d-py/blob/main/README.en.md">English README</a>
 </p>
 
-**注意：本项目中使用到的Live2D Core模块，需要自行前往[Live2D官网](https://www.live2d.com/en/sdk/download/native/)下载。同时，将暂时停止python build库的发布。**
+**注意：本仓库中使用到的Live2D Core模块，需要自行前往[Live2D官网](https://www.live2d.com/en/sdk/download/native/)下载。**
 
 使用 Python 直接加载和操作 Live2D 模型，不通过 Web Engine 等间接手段进行渲染。
 
