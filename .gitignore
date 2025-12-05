@@ -24,8 +24,6 @@ dist
 
 Resources/v3/草莓兔兔 试用
 
-test
-
 **.db
 
 !package/audio1.wav
@@ -62,3 +60,5 @@ package/test*.py
 .DS_Store
 
 Live2D/Core
+
+csmsdk_temp
