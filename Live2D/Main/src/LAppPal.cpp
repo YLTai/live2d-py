@@ -79,7 +79,7 @@ double LAppPal::GetCurrentTimePoint()
 
 void LAppPal::InitShaderDir(const std::string& path)
 {
-    SHADER_DIR = std::move(path);
+    SHADER_DIR = path;
     SHADER_DIR += std::filesystem::path::preferred_separator;
     Info("[Pal] Init Shader Dir: %s", SHADER_DIR.c_str());
 }
