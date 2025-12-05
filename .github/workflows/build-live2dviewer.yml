@@ -21,6 +21,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.13
+        architecture: X64
+
+    - name: Download CsmNativeSDK
+      run: python download_csmsdk.py
+
     - name: Install Qt
       # You may pin to the exact commit or the version.
       # uses: jurplel/install-qt-action@c6c7281365daef91a238e1c2ddce4eaa94a2991d

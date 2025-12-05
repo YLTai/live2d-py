@@ -159,3 +159,7 @@ def execute_download() -> bool:
         success = False
     print("[download_csmsdk] Download end.")
     return success
+
+
+if __name__ == "__main__":
+    execute_download()
