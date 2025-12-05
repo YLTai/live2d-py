@@ -14,7 +14,7 @@ import shutil
 # ======================== LEGAL DISCLAIMER (CORE COMPLIANCE) ========================
 DISCLAIMER = """
 ===========================================================================
-⚠️  IMPORTANT LEGAL DISCLAIMER
+IMPORTANT LEGAL DISCLAIMER
 ===========================================================================
 1. Copyright Ownership: Live2D Cubism Core library is the exclusive property of Live2D Inc.
    All intellectual property rights (including copyright) belong to Live2D Inc.
@@ -31,7 +31,7 @@ DISCLAIMER = """
    responsibility for the integrity or compatibility of Core files. Any compliance issues 
    arising from the use of this script are the sole responsibility of the user.
 
-📌 OFFICIAL ACQUISITION CHANNELS (RECOMMENDED):
+OFFICIAL ACQUISITION CHANNELS (RECOMMENDED):
    - Cubism Official Website: https://www.live2d.com/sdk/about/
    - Developer Documentation: https://docs.live2d.com/en/cubism-sdk-manual/top/
    - License Agreement: https://www.live2d.com/eula/live2d-software-license-agreement/
@@ -54,7 +54,7 @@ def print_disclaimer():
 
 def download_sdk(url, save_path):
     """Download Core library zip file"""
-    print(f"\n📥 Starting Core library download from official server: {url}")
+    print(f"\nStarting Core library download from official server: {url}")
     print("   (Download speed depends on your network—do not interrupt the process)")
     try:
         urllib.request.urlretrieve(
@@ -64,8 +64,8 @@ def download_sdk(url, save_path):
         )
     except Exception as e:
         raise RuntimeError(
-            f"❌ Download failed: {str(e)}\n"
-            f"👉 Check your network or download manually from: https://www.live2d.com/download/cubism-sdk/"
+            f"Download failed: {str(e)}\n"
+            f"Check your network or download manually from: https://www.live2d.com/download/cubism-sdk/"
         )
 
 
@@ -83,14 +83,14 @@ def print_progress(block_num, block_size, total_size):
 
 def extract_all(zip_path, output_dir):
     """Extract Core library from zip archive"""
-    print(f"\n📦 Extracting Core library to: {output_dir}")
+    print(f"\nExtracting Core library to: {output_dir}")
     os.makedirs(output_dir, exist_ok=True)
     try:
         with zipfile.ZipFile(zip_path, "r") as zip_ref:
             zip_ref.extractall(output_dir)
-        print("✅ Extraction completed successfully")
+        print("Extraction completed successfully")
     except Exception as e:
-        raise RuntimeError(f"❌ Extraction failed: {str(e)}")
+        raise RuntimeError(f"Extraction failed: {str(e)}")
 
 
 def setup_directory():
