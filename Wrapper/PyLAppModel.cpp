@@ -1,8 +1,6 @@
 #include "PyLAppModel.hpp"
 
 #include <Log.hpp>
-#include <modsupport.h>
-#include <pytypedefs.h>
 #include <unordered_map>
 #include <mutex>
 #include <chrono>
