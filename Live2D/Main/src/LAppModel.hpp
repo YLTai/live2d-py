@@ -46,7 +46,7 @@ public:
      * @brief model3.jsonが置かれたディレクトリとファイルパスからモデルを生成する
      *
      */
-    void LoadModelJson(const Csm::csmChar* fileName);
+    void LoadModelJson(const Csm::csmChar* fileName, int maskBufferCount = 2);
 
     /**
      * @brief レンダラを再構築する

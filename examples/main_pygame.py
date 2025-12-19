@@ -11,12 +11,11 @@ import time
 import pygame
 from pygame.locals import *
 
-# roation is only for v3
-# import live2d.v3 as live2d
-# from live2d.v3 import StandardParams
+import live2d.v3 as live2d
+from live2d.v3 import StandardParams
 
-import live2d.v2 as live2d
-from live2d.v2 import StandardParams
+# import live2d.v2 as live2d
+# from live2d.v2 import StandardParams
 from live2d.utils import log
 
 
@@ -53,7 +52,7 @@ def main():
             # os.path.join(resources.RESOURCES_DIRECTORY, "v3/Hiyori/Hiyori.model3.json")
             # os.path.join(resources.RESOURCES_DIRECTORY, "v3/小九/小九皮套（红）/小九.model3.json")
             # os.path.join(resources.RESOURCES_DIRECTORY, "v3/金发大小姐/金发大小姐.model3.json")
-        )
+        , maskBufferCount = 100)
     else:
         model.LoadModelJson(
             # os.path.join(resources.RESOURCES_DIRECTORY, "v2/托尔/model0.json")

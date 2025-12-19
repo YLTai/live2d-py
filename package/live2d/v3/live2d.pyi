@@ -77,7 +77,7 @@ class LAppModel:
     def __init__(self):
         ...
 
-    def LoadModelJson(self, fileName: str | Any) -> None:
+    def LoadModelJson(self, modelJsonPath: str | Any, maskBufferCount: int = 2) -> None:
         """
         Load Live2D model assets.
         

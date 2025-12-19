@@ -1,6 +1,8 @@
 #include "PyLAppModel.hpp"
 
 #include <Log.hpp>
+#include <modsupport.h>
+#include <pytypedefs.h>
 #include <unordered_map>
 #include <mutex>
 #include <chrono>
@@ -28,15 +30,17 @@ static void PyLAppModel_dealloc(PyLAppModelObject *self)
 }
 
 // LAppModel->LoadAssets
-static PyObject *PyLAppModel_LoadModelJson(PyLAppModelObject *self, PyObject *args)
+static PyObject *PyLAppModel_LoadModelJson(PyLAppModelObject *self, PyObject *args, PyObject *kwargs)
 {
     const char *fileName;
-    if (!PyArg_ParseTuple(args, "s", &fileName))
+    int maskBufferCount = 2;
+    static char* kwlist[] = {(char*)"modelJsonPath", (char*)"maskBufferCount", nullptr};
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "s|i", kwlist, &fileName, &maskBufferCount))
     {
         return NULL;
     }
 
-    self->model->LoadModelJson(fileName);
+    self->model->LoadModelJson(fileName, maskBufferCount);
 
     Py_RETURN_NONE;
 }
@@ -854,7 +858,7 @@ static PyObject *PyLAppModel_ResetExpressions(PyLAppModelObject* self, PyObject 
 
 // 包装模块方法的方法列表
 static PyMethodDef PyLAppModel_methods[] = {
-    {"LoadModelJson", (PyCFunction)PyLAppModel_LoadModelJson, METH_VARARGS, ""},
+    {"LoadModelJson", (PyCFunction)PyLAppModel_LoadModelJson, METH_VARARGS | METH_KEYWORDS, ""},
     {"Resize", (PyCFunction)PyLAppModel_Resize, METH_VARARGS, ""},
     {"Draw", (PyCFunction)PyLAppModel_Draw, METH_VARARGS, ""},
     {"StartMotion", (PyCFunction)PyLAppModel_StartMotion, METH_VARARGS | METH_KEYWORDS, ""},
