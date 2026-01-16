@@ -36,7 +36,7 @@ from setuptools.command.build_ext import build_ext
 from setuptools.command.install import install
 from setuptools.command.bdist_wheel import bdist_wheel
 
-VERSION = "0.6.0"  # TODO: edit before releasing a new version
+VERSION = "0.6.1"  # TODO: edit before releasing a new version
 CUBISM_SDK_DISTRIBUTION = (
     "https://cubism.live2d.com/sdk-native/bin/CubismSdkForNative-5-r.4.1.zip"
 )
