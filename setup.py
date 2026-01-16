@@ -31,12 +31,12 @@ import re
 import subprocess
 import sys
 
-from setuptools import setup, Extension
+from setuptools import setup, Extension, Command
 from setuptools.command.build_ext import build_ext
 from setuptools.command.install import install
 from setuptools.command.bdist_wheel import bdist_wheel
 
-VERSION = "0.6.1"  # TODO: edit before releasing a new version
+VERSION = "0.6.1.1"  # TODO: edit before releasing a new version
 CUBISM_SDK_DISTRIBUTION = (
     "https://cubism.live2d.com/sdk-native/bin/CubismSdkForNative-5-r.4.1.zip"
 )
@@ -289,6 +289,22 @@ class Install(install):
         install.run(self)
 
 
+class Download(Command):
+    """Download Live2D SDK"""
+
+    description = "Download Live2D SDK"
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        execute_download(CUBISM_SDK_DISTRIBUTION)
+        print("Download completed successfully")
+        
+
 setup(
     name=NAME,
     version=VERSION,
@@ -301,7 +317,7 @@ setup(
     url=URL,
     install_requires=INSTALL_REQUIRES,
     ext_modules=[FakeExtension("LAppModelWrapper", ".")],
-    cmdclass={"build_ext": CMakeBuild, "bdist_wheel": BuildWheel, "install": Install},
+    cmdclass={"build_ext": CMakeBuild, "bdist_wheel": BuildWheel, "install": Install, "download": Download},
     packages=["live2d"],
     package_data={"live2d": ["**/*.pyd", "**/*.so", "**/*.pyi", "**/*.py"]},
     package_dir={"live2d": "package/live2d"},

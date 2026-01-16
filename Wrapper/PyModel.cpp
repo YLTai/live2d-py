@@ -1,7 +1,6 @@
 #include "PyModel.hpp"
 
 #include <Log.hpp>
-#include <pytypedefs.h>
 
 static void MotionStartCallback(ACubismMotion *motion)
 {

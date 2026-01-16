@@ -26,9 +26,14 @@ jobs:
       with:
         python-version: 3.13
         architecture: X64
+        cache: pip
+    
+    - name: Install build deps
+      run: |
+        python -m pip install --upgrade setuptools
 
     - name: Download CsmNativeSDK
-      run: python download_csmsdk.py
+      run: python setup.py download
 
     - name: Install Qt
       # You may pin to the exact commit or the version.
