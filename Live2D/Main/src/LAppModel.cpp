@@ -716,7 +716,11 @@ void LAppModel::ReloadRenderer()
 {
     DeleteRenderer();
 
-    CreateRenderer();
+    if (_model) {
+        csmFloat32 width = _model->GetCanvasWidth();
+        csmFloat32 height = _model->GetCanvasHeight();
+        CreateRenderer(width, height);
+    }
 
     SetupTextures();
 }
