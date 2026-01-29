@@ -986,7 +986,9 @@ void Model::Drag(float x, float y)
 void Model::CreateRenderer(int maskBufferCount)
 {
     _textureManager.ReleaseTextures();
-    CubismUserModel::CreateRenderer(maskBufferCount);
+    csmFloat32 width = _model->GetCanvasWidth();
+    csmFloat32 height = _model->GetCanvasHeight();
+    CubismUserModel::CreateRenderer(width, height, maskBufferCount);
     SetupTextures();
 }
 
