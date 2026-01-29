@@ -752,7 +752,7 @@ void LAppModel::MotionEventFired(const csmString &eventValue)
     CubismLogInfo("%s is fired on LAppModel!!", eventValue.GetRawString());
 }
 
-Csm::Rendering::CubismOffscreenSurface_OpenGLES2 &LAppModel::GetRenderBuffer()
+Csm::Rendering::CubismRenderTarget_OpenGLES2 &LAppModel::GetRenderBuffer()
 {
     return _renderBuffer;
 }
@@ -925,7 +925,7 @@ void LAppModel::HitPart(float x, float y, bool topOnly, void *collector, void (*
     _matrixManager.ScreenToScene(&x, &y);
     _matrixManager.InvertTransform(&x, &y);
     const csmInt32 drawableCount = _model->GetDrawableCount();
-    const csmInt32 *renderOrders = _model->GetDrawableRenderOrders();
+    const csmInt32 *renderOrders = _model->GetRenderOrders();
     for (csmInt32 i = 0; i < drawableCount; i++)
     {
         // 绘制顺序，先绘制的被后绘制的覆盖

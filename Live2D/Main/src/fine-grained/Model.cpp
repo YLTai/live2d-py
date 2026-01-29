@@ -783,7 +783,7 @@ void Model::HitPart(float x, float y, void* collector,
     _matrixManager.ScreenToScene(&x, &y);
     _matrixManager.InvertTransform(&x, &y);
     const csmInt32 drawableCount = _model->GetDrawableCount();
-    const csmInt32* renderOrders = _model->GetDrawableRenderOrders();
+    const csmInt32* renderOrders = _model->GetRenderOrders();
     for (csmInt32 i = 0; i < drawableCount; i++) {
         // 绘制顺序，先绘制的被后绘制的覆盖
         _tmpOrderedDrawIndice[drawableCount - 1 - renderOrders[i]] = i;
@@ -844,7 +844,7 @@ void Model::HitDrawable(float x, float y, void* collector,
     _matrixManager.InvertTransform(&x, &y);
 
     const csmInt32 drawableCount = _model->GetDrawableCount();
-    const csmInt32* renderOrders = _model->GetDrawableRenderOrders();
+    const csmInt32* renderOrders = _model->GetRenderOrders();
     for (csmInt32 i = 0; i < drawableCount; i++) {
         // 绘制顺序，先绘制的被后绘制的覆盖
         _tmpOrderedDrawIndice[drawableCount - 1 - renderOrders[i]] = i;
@@ -912,7 +912,7 @@ bool Model::IsPartHit(int index, float x, float y)
     }
 
     const csmInt32 drawableCount = _model->GetDrawableCount();
-    const csmInt32* renderOrders = _model->GetDrawableRenderOrders();
+    const csmInt32* renderOrders = _model->GetRenderOrders();
     for (csmInt32 i = 0; i < drawableCount; i++) {
         // 绘制顺序，先绘制的被后绘制的覆盖
         _tmpOrderedDrawIndice[drawableCount - 1 - renderOrders[i]] = i;

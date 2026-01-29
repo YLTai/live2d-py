@@ -11,7 +11,7 @@
 #include <Model/CubismUserModel.hpp>
 #include <ICubismModelSetting.hpp>
 #include <Type/csmRectF.hpp>
-#include <Rendering/OpenGL/CubismOffscreenSurface_OpenGLES2.hpp>
+#include <Rendering/OpenGL/CubismRenderTarget_OpenGLES2.hpp>
 
 #include "LAppTextureManager.hpp"
 
@@ -134,7 +134,7 @@ public:
     /**
      * @brief   別ターゲットに描画する際に使用するバッファの取得
      */
-    Csm::Rendering::CubismOffscreenSurface_OpenGLES2& GetRenderBuffer();
+    Csm::Rendering::CubismRenderTarget_OpenGLES2& GetRenderBuffer();
 
     /**
      * @brief   .moc3ファイルの整合性をチェックする
@@ -310,7 +310,7 @@ private:
 
     LAppTextureManager _textureManager; ///< 纹理管理器
 
-    Csm::Rendering::CubismOffscreenSurface_OpenGLES2 _renderBuffer; ///< フレームバッファ以外の描画先
+    Csm::Rendering::CubismRenderTarget_OpenGLES2 _renderBuffer; ///< フレームバッファ以外の描画先
 
     MatrixManager _matrixManager; ///< 绘制、点击、变换的矩阵管理器
 
