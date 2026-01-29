@@ -73,7 +73,7 @@ LAppModel::LAppModel()
 
 LAppModel::~LAppModel()
 {
-    _renderBuffer.DestroyOffscreenSurface();
+    _renderBuffer.DestroyRenderTarget();
     _textureManager.ReleaseTextures();
 
     ReleaseMotions();
