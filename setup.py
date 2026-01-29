@@ -38,7 +38,7 @@ from setuptools.command.bdist_wheel import bdist_wheel
 
 VERSION = "0.6.1.1"  # TODO: edit before releasing a new version
 CUBISM_SDK_DISTRIBUTION = (
-    "https://cubism.live2d.com/sdk-native/bin/CubismSdkForNative-5-r.4.1.zip"
+    "https://cubism.live2d.com/sdk-native/bin/CubismSdkForNative-5-r.5-beta.3.zip"
 )
 
 NAME = "live2d-py"
@@ -324,3 +324,4 @@ setup(
     keywords=["Live2D", "Cubism Live2D", "Cubism SDK", "Cubism SDK for Python"],
     python_requires=REQUIRES_PYTHON,
 )
+
