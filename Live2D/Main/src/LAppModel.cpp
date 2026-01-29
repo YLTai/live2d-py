@@ -112,7 +112,9 @@ void LAppModel::LoadModelJson(const csmChar *fileName, int maskBufferCount)
         return;
     }
 
-    CreateRenderer(maskBufferCount);
+    csmFloat32 width = _model->GetCanvasWidth();
+    csmFloat32 height = _model->GetCanvasHeight();
+    CreateRenderer(width, height, maskBufferCount);
 
     SetupTextures();
 }
